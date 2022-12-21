@@ -1,26 +1,16 @@
-import { useState, useEffect } from 'react'
-import getValorantAgents from './services/valorantAPI'
+import React, { useContext } from 'react';
+import AppContext from './context/AppContext';
+import ValorantAgents from './components/ValorantAgents';
+import Agent from './components/Agent';
 
 function App() {
-  const [valorantAgents, setValorantAgents] = useState([])
-
-  useEffect(() => {
-    const getAgents = async () => {
-      const { data } = await getValorantAgents()
-      setValorantAgents(data)
-    }
-    getAgents()
-  }, [])
-
+  const { agent } = useContext(AppContext);
   return (
     <div>
-      <ul>
-        {valorantAgents.map((agent) => (
-          <li key={agent.uuid}>{agent.displayName}</li>
-        ))}
-      </ul>
+      <h1>Valorant Agents</h1>
+      { agent ? <Agent /> : <ValorantAgents /> }
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

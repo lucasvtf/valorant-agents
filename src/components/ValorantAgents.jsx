@@ -17,7 +17,7 @@ function ValorantAgents() {
           <img alt={agent.displayName} src={agent.displayIcon} width="250px" />
           <h3>{agent.displayName}</h3>
           <p>{agent.description}</p>
-          <button type="button" onClick={() => handleClick(agent.uuid)}>Detalhes</button>
+          <button type="button" onClick={() => handleClick(agent.uuid)}>Details</button>
         </div>
       ))}
     </div>

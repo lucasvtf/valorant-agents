@@ -1,14 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import AppContext from '../context/AppContext';
 
 function ValorantAgents() {
-  const { valorantAgents, setAgent, setChooseAgent } = useContext(AppContext);
+  const {
+    valorantAgents, setAgent, setChooseAgent, searchAgent, setValorantAgents,
+  } = useContext(AppContext);
 
   const handleClick = (id) => {
     const chosenAgent = valorantAgents.find(({ uuid }) => uuid === id);
     setChooseAgent(chosenAgent);
     setAgent(true);
   };
+
+  const searchedAgent = () => {
+    const agent = valorantAgents
+      .filter(({ displayName }) => displayName.toLowerCase().includes(searchAgent.toLowerCase()));
+    setValorantAgents(agent);
+  };
+
+  useEffect(() => {
+    searchedAgent();
+  }, [searchAgent]);
 
   return (
     <div>

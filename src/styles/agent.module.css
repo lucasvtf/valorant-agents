@@ -1,0 +1,42 @@
+.main {
+  display: flex;
+  color: #383e3a;
+}
+
+.agentImg {
+  height: 800px;
+}
+
+.agentDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 500px;
+}
+
+.abilitiesDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.abilities {
+  display: flex;
+  flex-direction: row;
+}
+
+.abilitiesImg {
+  height: 50px;
+  position: relative;
+}
+
+.button {
+  font-size: medium;
+  width: 100px;
+  height: 40px;
+  border: none;
+  color: #ece8e1;
+  background-color: #ff4655;
+}

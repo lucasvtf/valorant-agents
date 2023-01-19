@@ -1,9 +1,10 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
+import styles from '../styles/valorantAgents.module.css';
 
 function ValorantAgents() {
   const {
-    valorantAgents, setAgent, setChooseAgent, searchAgent, setValorantAgents,
+    valorantAgents, setAgent, setChooseAgent,
   } = useContext(AppContext);
 
   const handleClick = (id) => {
@@ -12,24 +13,24 @@ function ValorantAgents() {
     setAgent(true);
   };
 
-  const searchedAgent = () => {
-    const agent = valorantAgents
-      .filter(({ displayName }) => displayName.toLowerCase().includes(searchAgent.toLowerCase()));
-    setValorantAgents(agent);
-  };
-
-  useEffect(() => {
-    searchedAgent();
-  }, [searchAgent]);
-
   return (
-    <div>
+    <div className={styles.agents}>
       {valorantAgents.map((agent) => (
-        <div key={agent.uuid}>
-          <img alt={agent.displayName} src={agent.displayIcon} width="250px" />
-          <h3>{agent.displayName}</h3>
-          <p>{agent.description}</p>
-          <button type="button" onClick={() => handleClick(agent.uuid)}>Details</button>
+        <div key={agent.uuid} className={styles.agent}>
+          <div>
+            <img alt={agent.displayName} src={agent.displayIcon} width="250px" />
+            <h3>{agent.displayName}</h3>
+            <p>{agent.description}</p>
+          </div>
+          <div>
+            <button
+              type="button"
+              className={styles.button}
+              onClick={() => handleClick(agent.uuid)}
+            >
+              Details
+            </button>
+          </div>
         </div>
       ))}
     </div>

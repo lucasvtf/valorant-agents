@@ -1,16 +1,11 @@
-import React, { useContext } from 'react';
-import AppContext from '../context/AppContext';
+import React from 'react';
+import styles from '../styles/header.module.css';
 
 function Header() {
-  const { setSearchAgent } = useContext(AppContext);
-
-  const handleSearch = ({ target: { value } }) => {
-    setSearchAgent(value);
-  };
   return (
-    <div>
-      <h1>Valorant Agents</h1>
-      <input type="search" name="searchAgent" onChange={handleSearch} />
+    <div className={styles.header}>
+      <img src="/logo.png" alt="Valorant logo" className={styles.logo} />
+      <img src="/valorant.png" alt="Valorant logo" className={styles.name} />
     </div>
   );
 }

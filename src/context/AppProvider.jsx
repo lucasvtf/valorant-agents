@@ -7,7 +7,6 @@ function AppProvider({ children }) {
   const [valorantAgents, setValorantAgents] = useState([]);
   const [chooseAgent, setChooseAgent] = useState([]);
   const [agent, setAgent] = useState(false);
-  const [searchAgent, setSearchAgent] = useState('');
 
   useEffect(() => {
     const getAgents = async () => {
@@ -18,8 +17,13 @@ function AppProvider({ children }) {
   }, []);
 
   const context = useMemo(() => ({
-    valorantAgents, chooseAgent, agent, setChooseAgent, setAgent, searchAgent, setSearchAgent,
-  }), [valorantAgents, chooseAgent, agent, searchAgent]);
+    valorantAgents,
+    chooseAgent,
+    agent,
+    setChooseAgent,
+    setAgent,
+    setValorantAgents,
+  }), [valorantAgents, chooseAgent, agent]);
 
   return (
     <AppContext.Provider value={context}>

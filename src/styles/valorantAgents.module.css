@@ -1,0 +1,32 @@
+.agents {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin: 20px;
+}
+
+.agent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  margin: 50px;
+  color: #383e3a;
+}
+
+.button {
+  font-size: medium;
+  width: 100px;
+  height: 40px;
+  border: none;
+  color: #ece8e1;
+  background-color: #ff4655;
+}
+
+/*
+quando passar por cima: #0F1923 
+*/

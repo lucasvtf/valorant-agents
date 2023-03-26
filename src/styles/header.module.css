@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  background-color: #111111;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.logo {
+  height: 100px;
+}
+
+.name {
+  height: 200px;
+}

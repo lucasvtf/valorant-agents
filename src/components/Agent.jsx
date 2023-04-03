@@ -21,7 +21,7 @@ function Agent() {
       <div className={styles.agentDetail}>
         <div>
           <h4>{`Role: ${chooseAgent.role.displayName}`}</h4>
-          <h4>{ `Description: ${chooseAgent.description}` }</h4>
+          <h4>{`Description: ${chooseAgent.description}`}</h4>
           <div>
             <h4>Skills</h4>
             <div className={styles.abilitiesDiv}>
@@ -35,14 +35,18 @@ function Agent() {
                     />
                     <h5>{skill.displayName}</h5>
                   </div>
-                  {/* <p>{skill.description}</p> */}
+                  <div>
+                    <p>{skill.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
         <div>
-          <button type="button" className={styles.button} onClick={handleClick}>Back</button>
+          <button type="button" className={styles.button} onClick={handleClick}>
+            Back
+          </button>
         </div>
       </div>
     </div>
